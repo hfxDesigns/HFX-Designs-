@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HFX Designs - Hafiz Finaz | Creative Graphic Designer & Visual Brand Strategist. Premium design services including branding, logo design, UI/UX, and more.">
+<meta name="keywords" content="graphic designer, brand designer, logo design, UI UX, HFX Designs, Hafiz Finaz">
+<title>HFX Designs | Hafiz Finaz – Creative Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <svg viewBox="0 0 120 120" class="logo-svg loader-logo-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF2D8A"/>
+            <stop offset="50%" style="stop-color:#E91E96"/>
+            <stop offset="100%" style="stop-color:#9B27AF"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 10 C40 10, 10 25, 10 55 C10 75, 30 90, 60 90 C90 90, 110 75, 110 55 C110 25, 80 10, 60 10 Z" fill="none"/>
+        <!-- Petal Top-Left -->
+        <path d="M60 60 C50 45, 25 30, 20 50 C15 65, 35 75, 60 60 Z" fill="url(#loaderGrad)" opacity="0.9"/>
+        <!-- Petal Top-Right -->
+        <path d="M60 60 C70 45, 95 30, 100 50 C105 65, 85 75, 60 60 Z" fill="url(#loaderGrad)" opacity="0.75"/>
+        <!-- Petal Bottom-Left -->
+        <path d="M60 60 C45 70, 25 90, 40 105 C55 115, 70 95, 60 60 Z" fill="url(#loaderGrad)" opacity="0.85"/>
+        <!-- Petal Bottom-Right -->
+        <path d="M60 60 C75 70, 95 90, 80 105 C65 115, 50 95, 60 60 Z" fill="url(#loaderGrad)" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="loader-text">
+      <span>H</span><span>F</span><span>X</span><span> </span><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span><span>S</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <div class="loader-percent" id="loaderPercent">0%</div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <svg viewBox="0 0 50 50" class="logo-svg nav-logo-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF2D8A"/>
+            <stop offset="100%" style="stop-color:#9B27AF"/>
+          </linearGradient>
+        </defs>
+        <path d="M25 25 C21 19, 10 13, 8 21 C6 27, 14 31, 25 25 Z" fill="url(#navGrad)"/>
+        <path d="M25 25 C29 19, 40 13, 42 21 C44 27, 36 31, 25 25 Z" fill="url(#navGrad)" opacity="0.8"/>
+        <path d="M25 25 C19 29, 10 37, 17 43 C23 47, 29 39, 25 25 Z" fill="url(#navGrad)" opacity="0.9"/>
+        <path d="M25 25 C31 29, 40 37, 33 43 C27 47, 21 39, 25 25 Z" fill="url(#navGrad)" opacity="0.7"/>
+      </svg>
+      <span class="nav-brand">HFX<span class="accent">.</span></span>
+    </a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="admin.html" class="nav-link nav-admin-btn">Admin</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-container">
+    <div class="hero-left" data-reveal>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>Available for Freelance</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-title-main">HFX</span>
+        <span class="hero-title-accent">DESIGNS</span>
+      </h1>
+      <h2 class="hero-subtitle">
+        Creative Graphic Designer<br>
+        <span class="typewriter" id="typewriter"></span>
+      </h2>
+      <p class="hero-desc">Creating memorable visual identities, impactful designs, and premium digital experiences that leave a lasting impression.</p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="btn btn-primary magnetic">
+          <span>View Portfolio</span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="#contact" class="btn btn-outline magnetic">
+          <span>Hire Me</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="150">0</span><span class="stat-plus">+</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-count="80">0</span><span class="stat-plus">+</span><span class="stat-label">Clients</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-count="4">0</span><span class="stat-plus">+</span><span class="stat-label">Years</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-visual" id="heroVisual">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-logo-big">
+          <svg viewBox="0 0 200 200" class="logo-svg hero-logo-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#FF2D8A"/>
+                <stop offset="50%" style="stop-color:#E91E96"/>
+                <stop offset="100%" style="stop-color:#9B27AF"/>
+              </linearGradient>
+              <filter id="heroGlow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Petal Top-Left -->
+            <path d="M100 100 C80 75, 35 50, 30 80 C25 105, 55 120, 100 100 Z" fill="url(#heroGrad1)" filter="url(#heroGlow)" opacity="0.95"/>
+            <!-- Petal Top-Right -->
+            <path d="M100 100 C120 75, 165 50, 170 80 C175 105, 145 120, 100 100 Z" fill="url(#heroGrad1)" filter="url(#heroGlow)" opacity="0.8"/>
+            <!-- Petal Bottom-Left -->
+            <path d="M100 100 C75 120, 50 160, 75 175 C95 185, 115 155, 100 100 Z" fill="url(#heroGrad1)" filter="url(#heroGlow)" opacity="0.9"/>
+            <!-- Petal Bottom-Right -->
+            <path d="M100 100 C125 120, 150 160, 125 175 C105 185, 85 155, 100 100 Z" fill="url(#heroGrad1)" filter="url(#heroGlow)" opacity="0.75"/>
+          </svg>
+        </div>
+        <div class="float-badge float-badge-1">
+          <span class="badge-icon">✦</span>
+          <span>Brand Identity</span>
+        </div>
+        <div class="float-badge float-badge-2">
+          <span class="badge-icon">◈</span>
+          <span>UI Design</span>
+        </div>
+        <div class="float-badge float-badge-3">
+          <span class="badge-icon">❋</span>
+          <span>Visual Strategy</span>
+        </div>
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about section" id="about">
+  <div class="about-bg-glow"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-col" data-reveal>
+        <div class="about-img-wrap">
+          <div class="about-img-glow"></div>
+          <div class="about-particles-wrap" id="aboutParticles"></div>
+          <div class="about-photo-placeholder">
+            <div class="photo-inner">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="about-logo-large">
+                <defs>
+                  <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FF2D8A"/>
+                    <stop offset="100%" style="stop-color:#9B27AF"/>
+                  </linearGradient>
+                </defs>
+                <path d="M100 100 C80 75, 35 50, 30 80 C25 105, 55 120, 100 100 Z" fill="url(#aboutGrad)" opacity="0.95"/>
+                <path d="M100 100 C120 75, 165 50, 170 80 C175 105, 145 120, 100 100 Z" fill="url(#aboutGrad)" opacity="0.8"/>
+                <path d="M100 100 C75 120, 50 160, 75 175 C95 185, 115 155, 100 100 Z" fill="url(#aboutGrad)" opacity="0.9"/>
+                <path d="M100 100 C125 120, 150 160, 125 175 C105 185, 85 155, 100 100 Z" fill="url(#aboutGrad)" opacity="0.75"/>
+              </svg>
+              <div class="photo-name-badge">Hafiz Finaz</div>
+            </div>
+          </div>
+          <div class="about-floating-tag tag-1">✦ Graphic Designer</div>
+          <div class="about-floating-tag tag-2">◈ Brand Strategist</div>
+        </div>
+      </div>
+
+      <div class="about-content-col" data-reveal>
+        <div class="section-eyebrow"><span class="eyebrow-dot"></span>About Me</div>
+        <h2 class="section-title">Crafting <span class="gradient-text">Visual Stories</span> That Resonate</h2>
+        <p class="about-desc">I'm Hafiz Finaz, a passionate Creative Graphic Designer and Visual Brand Strategist based in The Nilgiris. With over 4 years of experience, I transform ideas into compelling visual narratives that captivate audiences and elevate brands.</p>
+        <p class="about-desc">My expertise spans branding, digital design, print, and UI/UX — delivering premium results that go beyond aesthetics to create real business impact.</p>
+
+        <div class="about-achievements">
+          <div class="achievement-card" data-reveal>
+            <span class="ach-num" data-count="150">0</span><span class="ach-plus">+</span>
+            <span class="ach-label">Projects Completed</span>
+          </div>
+          <div class="achievement-card" data-reveal>
+            <span class="ach-num" data-count="80">0</span><span class="ach-plus">+</span>
+            <span class="ach-label">Happy Clients</span>
+          </div>
+          <div class="achievement-card" data-reveal>
+            <span class="ach-num" data-count="4">0</span><span class="ach-plus">+</span>
+            <span class="ach-label">Years Experience</span>
+          </div>
+          <div class="achievement-card" data-reveal>
+            <span class="ach-num" data-count="25">0</span><span class="ach-plus">+</span>
+            <span class="ach-label">Design Awards</span>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <a href="#contact" class="btn btn-primary magnetic"><span>Let's Work Together</span><div class="btn-glow"></div></a>
+          <a href="#portfolio" class="btn btn-ghost magnetic"><span>View My Work</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow"><span class="eyebrow-dot"></span>What I Offer</div>
+      <h2 class="section-title">Premium <span class="gradient-text">Design Services</span></h2>
+      <p class="section-sub">From brand identity to digital experiences — comprehensive creative solutions tailored to elevate your vision.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">◉</span></div>
+        <h3>Branding</h3>
+        <p>Complete brand identity systems that tell your unique story and resonate with your audience.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">✦</span></div>
+        <h3>Logo Design</h3>
+        <p>Distinctive, memorable logos that capture the essence of your brand in a single mark.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">◈</span></div>
+        <h3>Social Media Design</h3>
+        <p>Scroll-stopping visuals that build engagement and grow your social presence.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">❋</span></div>
+        <h3>Packaging Design</h3>
+        <p>Premium packaging that makes your product irresistible on shelves and online.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">▣</span></div>
+        <h3>Print Design</h3>
+        <p>Flyers, brochures, banners and all print media with impeccable attention to detail.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">⬡</span></div>
+        <h3>UI Design</h3>
+        <p>Intuitive, visually stunning user interfaces for apps and websites.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">✿</span></div>
+        <h3>Wedding & Event Photography</h3>
+        <p>Capturing precious moments with cinematic flair and artistic composition.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">◑</span></div>
+        <h3>Poster Designing</h3>
+        <p>Eye-catching posters that command attention and communicate powerfully.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">▶</span></div>
+        <h3>Video Editing</h3>
+        <p>Cinematic video edits, reels, and motion content for brands and events.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">▪</span></div>
+        <h3>Business Card</h3>
+        <p>Premium business cards that make a powerful first impression every time.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">❑</span></div>
+        <h3>Invitation Card</h3>
+        <p>Elegant invitation designs for weddings, events, and special occasions.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">⊞</span></div>
+        <h3>DTP Design</h3>
+        <p>Desktop publishing for magazines, newsletters, catalogues, and publications.</p>
+        <div class="service-hover-line"></div>
+      </div>
+      <div class="service-card" data-reveal>
+        <div class="service-icon-wrap"><span class="service-icon">◻</span></div>
+        <h3>Book Cover Design</h3>
+        <p>Compelling book covers that capture a story's essence and draw readers in.</p>
+        <div class="service-hover-line"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills section" id="skills">
+  <div class="container">
+    <div class="section-header" data-reveal>
+      <div class="section-eyebrow"><span class="eyebrow-dot"></span>Expertise</div>
+      <h2 class="section-title">My <span class="gradient-text">Creative Toolkit</span></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-item" data-reveal data-skill="92">
+        <div class="skill-circle-wrap">
+          <svg class="skill-circle" viewBox="0 0 120 120">
+            <circle class="skill-bg" cx="60" cy="60" r="50" fill="none" stroke-width="6"/>
+            <circle class="skill-fill" cx="60" cy="60" r="50" fill="none" stroke-width="6" stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="skill-percent">0%</div>
+          <div class="skill-icon">Ps</div>
+        </div>
+        <span class="skill-name">Photoshop</span>
+      </div>
+      <div class="skill-item" data-reveal data-skill="95">
+        <div class="skill-circle-wrap">
+          <svg class="skill-circle" viewBox="0 0 120 120">
+            <circle class="skill-bg" cx="60" cy="60" r="50" fill="none" stroke-width="6"/>
+            <circle class="skill-fill" cx="60" cy="60" r="50" fill="none" stroke-width="6" stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="skill-percent">0%</div>
+          <div class="skill-icon">Ai</div>
+        </div>
+        <span class="skill-name">Illustrator</span>
+      </div>
+      <div class="skill-item" data-reveal data-skill="88">
+        <div class="skill-circle-wrap">
+          <svg class="skill-circle" viewBox="0 0 120 120">
+            <circle class="skill-bg" cx="60" cy="60" r="50" fill="none" stroke-width="6"/>
+            <circle class="skill-fill" cx="60" cy="60" r="50" fill="none" stroke-width="6" stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="skill-percent">0%</div>
+          <div class="skill-icon">Cc</div>
+        </div>
+        <span class="skill-name">CapCut</span>
+      </div>
+      <div class="skill-item" data-reveal data-skill="85">
+        <div class="skill-circle-wrap">
+          <svg class="skill-circle" viewBox="0 0 120 120">
+            <circle class="skill-bg" cx="60" cy="60" r="50" fill="none" stroke-width="6"/>
+            <circle class="skill-fill" cx="60" cy="60" r="50" fill="none" stroke-width="6" stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="skill-percent">0%</div>
+          <div class="skill-icon">Id</div>
+        </div>
+        <span class="skill-name">InDesign</span>
+      </div>
+      <div class="skill-item" data-reveal data-skill="80">
+        <div class="skill-circle-wrap">
+          <svg class="skill-circle" viewBox="0 0 120 120">
+            <circle class="skill-bg" cx="60" cy="60" r="50" fill="none" stroke-width="6"/>
+            <circle class="skill-fill" cx="60" cy="60" r="50" fill="none" stroke-width="6" stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="skill-percent">0%</div>
+          <div class="skill-icon">Ae</div>
+        </div>
+        <span class="skill-name">After Effects</span>
+      </di
