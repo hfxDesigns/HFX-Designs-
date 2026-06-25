@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — HFX Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-page" id="body">
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-bg">
+    <div class="login-orb login-orb-1"></div>
+    <div class="login-orb login-orb-2"></div>
+  </div>
+  <div class="login-card">
+    <div class="login-logo">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+        <defs>
+          <linearGradient id="loginGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF2D8A"/>
+            <stop offset="100%" style="stop-color:#9B27AF"/>
+          </linearGradient>
+        </defs>
+        <path d="M30 30 C25 23, 13 16, 10 25 C8 32, 17 37, 30 30 Z" fill="url(#loginGrad)"/>
+        <path d="M30 30 C35 23, 47 16, 50 25 C52 32, 43 37, 30 30 Z" fill="url(#loginGrad)" opacity="0.8"/>
+        <path d="M30 30 C23 35, 12 45, 20 52 C27 57, 35 47, 30 30 Z" fill="url(#loginGrad)" opacity="0.9"/>
+        <path d="M30 30 C37 35, 48 45, 40 52 C33 57, 25 47, 30 30 Z" fill="url(#loginGrad)" opacity="0.7"/>
+      </svg>
+      <span>HFX<span class="acc">.</span>ADMIN</span>
+    </div>
+    <h2>Welcome Back</h2>
+    <p class="login-sub">Sign in to manage your portfolio</p>
+    <form id="loginForm" novalidate>
+      <div class="login-field">
+        <label>Username</label>
+        <input type="text" id="loginUser" placeholder="HFX Designs" autocomplete="username">
+      </div>
+      <div class="login-field">
+        <label>Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="loginPass" placeholder="••••••••••" autocomplete="current-password">
+          <button type="button" class="pw-toggle" id="pwToggle">👁</button>
+        </div>
+      </div>
+      <div class="login-remember">
+        <label class="checkbox-wrap">
+          <input type="checkbox" id="rememberMe">
+          <span class="checkmark"></span>
+          Remember me
+        </label>
+      </div>
+      <div class="login-error" id="loginError">Invalid credentials. Please try again.</div>
+      <button type="submit" class="btn-login" id="loginBtn">Sign In</button>
+    </form>
+    <a href="index.html" class="login-back">← Back to Portfolio</a>
+  </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div class="admin-layout" id="adminLayout" style="display:none">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+        <defs>
+          <linearGradient id="sideGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF2D8A"/>
+            <stop offset="100%" style="stop-color:#9B27AF"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 20 C16 15, 8 10, 6 16 C5 21, 11 24, 20 20 Z" fill="url(#sideGrad)"/>
+        <path d="M20 20 C24 15, 32 10, 34 16 C35 21, 29 24, 20 20 Z" fill="url(#sideGrad)" opacity="0.8"/>
+        <path d="M20 20 C15 23, 8 30, 13 35 C18 38, 23 31, 20 20 Z" fill="url(#sideGrad)" opacity="0.9"/>
+        <path d="M20 20 C25 23, 32 30, 27 35 C22 38, 17 31, 20 20 Z" fill="url(#sideGrad)" opacity="0.7"/>
+      </svg>
+      <span>HFX<span class="acc">.</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" data-tab="dashboard">
+        <span class="sl-icon">◉</span><span>Dashboard</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tab="projects">
+        <span class="sl-icon">◈</span><span>Projects</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tab="add">
+        <span class="sl-icon">✦</span><span>Add Project</span>
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="index.html" class="sidebar-link">
+        <span class="sl-icon">↗</span><span>View Site</span>
+      </a>
+      <button class="sidebar-link logout-btn" id="logoutBtn">
+        <span class="sl-icon">⊗</span><span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Mobile header -->
+  <div class="mob-header">
+    <button class="mob-menu-btn" id="mobMenuBtn">☰</button>
+    <span class="mob-title">HFX Admin</span>
+    <button class="logout-btn-mob" id="logoutBtnMob">⊗</button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+
+    <!-- Dashboard Tab -->
+    <div class="tab-content active" id="tab-dashboard">
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Welcome back, Hafiz ✦</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-icon">◈</div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statTotal">0</span>
+            <span class="stat-card-label">Total Projects</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">✦</div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statCats">0</span>
+            <span class="stat-card-label">Categories Used</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-icon">◉</div>
+          <div class="stat-card-info">
+            <span class="stat-card-num" id="statRecent">0</span>
+            <span class="stat-card-label">Added This Month</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-section">
+        <h2>Recent Projects</h2>
+        <div class="recent-list" id="recentList"></div>
+      </div>
+    </div>
+
+    <!-- Projects Tab -->
+    <div class="tab-content" id="tab-projects">
+      <div class="page-header">
+        <h1>All Projects</h1>
+        <button class="btn-action" id="goAddBtn">+ Add New</button>
+      </div>
+      <div class="search-bar-wrap">
+        <input type="search" id="searchInput" class="search-bar" placeholder="Search projects…">
+      </div>
+      <div class="projects-table-wrap">
+        <table class="projects-table">
+          <thead>
+            <tr>
+              <th>Thumbnail</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projectsTableBody"></tbody>
+        </table>
+        <div class="table-empty" id="tableEmpty">No projects yet. <a href="#" id="addFirstLink">Add your first project →</a></div>
+      </div>
+    </div>
+
+    <!-- Add/Edit Project Tab -->
+    <div class="tab-content" id="tab-add">
+      <div class="page-header">
+        <h1 id="formTabTitle">Add Project</h1>
+      </div>
+      <form class="project-form" id="projectForm" novalidate>
+        <input type="hidden" id="editId">
+        <div class="form-grid">
+          <div class="form-group-admin">
+            <label>Project Title *</label>
+            <input type="text" id="pTitle" placeholder="e.g. Brand Identity for Luxe Co." required>
+          </div>
+          <div class="form-group-admin">
+            <label>Category *</label>
+            <select id="pCategory" required>
+              <option value="">Select Category</option>
+              <option value="branding">Branding</option>
+              <option value="logo">Logo Design</option>
+              <option value="social">Social Media Design</option>
+              <option value="packaging">Packaging Design</option>
+              <option value="print">Print Design</option>
+              <option value="ui">UI Design</option>
+              <option value="wedding">Wedding & Event Photography</option>
+              <option value="poster">Poster Designing</option>
+              <option value="video">Video Editing</option>
+              <option value="business-card">Business Card</option>
+              <option value="invitation">Invitation Card</option>
+              <option value="dtp">DTP Design</option>
+              <option value="book-cover">Book Cover Design</option>
+            </select>
+          </div>
+          <div class="form-group-admin full">
+            <label>Description</label>
+            <textarea id="pDesc" placeholder="Describe this project…" rows="4"></textarea>
+          </div>
+          <div class="form-group-admin">
+            <label>Behance Link</label>
+            <input type="url" id="pBehance" placeholder="https://behance.net/…">
+          </div>
+          <div class="form-group-admin">
+            <label>Dribbble Link</label>
+            <input type="url" id="pDribbble" placeholder="https://dribbble.com/…">
+          </div>
+          <div class="form-group-admin full">
+            <label>Project Image</label>
+            <div class="upload-area" id="uploadArea">
+              <div class="upload-inner" id="uploadInner">
+                <span class="upload-icon">◈</span>
+                <p>Click or drag & drop an image</p>
+                <span class="upload-hint">PNG, JPG, WEBP up to 5MB</span>
+              </div>
+              <input type="file" id="imageInput" accept="image/*" style="display:none">
+              <div class="image-preview-wrap" id="imagePreviewWrap" style="display:none">
+                <img id="imagePreview" src="" alt="Preview">
+                <button type="button" class="remove-img-btn" id="removeImg">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" id="cancelEdit">Cancel</button>
+          <button type="submit" class="btn-save" id="saveBtn">Save Project</button>
+        </div>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+
+  </main>
+</div>
+
+<!-- Delete Confirm Modal -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal-box">
+    <h3>Delete Project?</h3>
+    <p>This action cannot be undone. The project will be permanently removed.</p>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelDelete">Cancel</button>
+      <button class="btn-delete-confirm" id="confirmDelete">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
